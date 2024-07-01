@@ -9,7 +9,10 @@ export const connectDB = (
   const dbPassword = configService.get<string>('MONGODB_PASSWORD');
   const dbName = configService.get<string>('MONGODB_DATABASE_NAME');
 
-  const mongodbUri = `mongodb+srv://achrafdev:${dbPassword}@proshop.rbkt6.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+  // const mongodbUri = `mongodb+srv://achrafdev:${dbPassword}@proshop.rbkt6.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+
+  const mongodbUri = `mongodb://proshopUser:${dbPassword}@localhost:27017/${dbName}`;
+  console.log(mongodbUri);
 
   return {
     uri: mongodbUri,
